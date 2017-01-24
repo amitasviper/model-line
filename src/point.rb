@@ -12,8 +12,16 @@ class Point
     that.send(:x) == @x && that.send(:y) == @y
   end
 
+  def square_of_differences(number_one, number_two)
+    difference = number_one - number_two
+    difference * difference
+  end
+
   def distance_from(end_point)
-    Math.sqrt((end_point.send(:x) - @x)**2 + (end_point.send(:y) - @y)**2 )
+    square_difference_x = square_of_differences(end_point.send(:x), @x)
+    square_difference_y = square_of_differences(end_point.send(:y), @y)
+    sum_of_squares = square_difference_x + square_difference_y
+    Math.sqrt(sum_of_squares)
   end
 
   private

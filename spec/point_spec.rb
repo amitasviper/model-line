@@ -40,15 +40,15 @@ describe 'Point' do
     end
 
     it 'is 0 units from another point with same coordinates' do
-      point_one = Point.new(0, 0)
-      point_two = Point.new(0, 0)
+      point_one = Point.new(24, 55)
+      point_two = Point.new(24, 55)
       expect(point_one.distance_from(point_two)).to eq(0)
     end
 
-    it 'is 4 units between (0,0) and (0,4)' do
-      point_one = Point.new(0, 0)
-      point_two = Point.new(0, 4)
-      expect(point_one.distance_from(point_two)).to eq(4)
+    it 'is 13 units between (14, 35) and (2, 30)' do
+      point_one = Point.new(14, 35)
+      point_two = Point.new(2, 30)
+      expect(point_one.distance_from(point_two)).to eq(13)
     end
   end
 end
