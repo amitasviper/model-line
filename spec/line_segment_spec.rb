@@ -32,5 +32,16 @@ describe LineSegment do
       line_two = double(start_point:22, end_point:55)
       expect(line_one).not_to eq(line_two)
     end
+
+    it 'should be equal to itself' do
+      line = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
+      expect(line).to eq(line)
+    end
+
+    it 'should be equal to a line with swapped end points' do
+      line_one = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
+      line_two = LineSegment.new(Point.new(55, 66), Point.new(22, 44))
+      expect(line_one).to eq(line_two)
+    end
   end
 end

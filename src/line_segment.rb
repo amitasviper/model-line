@@ -13,8 +13,10 @@ class LineSegment
 
   def ==(that)
     return false if that.nil?
+    return true if self.equal?(that)
     return false if self.class != that.class
-    that.send(:start_point) == @start_point && that.send(:end_point) == @end_point
+    (that.send(:start_point) == @start_point && that.send(:end_point) == @end_point) ||
+        (that.send(:start_point) == end_point && that.send(:end_point) == @start_point)
   end
 
   private
