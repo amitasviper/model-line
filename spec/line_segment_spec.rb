@@ -26,5 +26,11 @@ describe LineSegment do
       line = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
       expect(line).not_to eq(nil)
     end
+
+    it 'not equal if both the lines are not type of LineSegment' do
+      line_one = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
+      line_two = double(start_point:22, end_point:55)
+      expect(line_one).not_to eq(line_two)
+    end
   end
 end
