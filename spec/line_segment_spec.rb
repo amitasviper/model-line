@@ -14,4 +14,12 @@ describe LineSegment do
       expect(line.length).to eq(6)
     end
   end
+
+  context '#equals' do
+    it 'should be equal if both have same end points' do
+      line_one = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
+      line_two = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
+      expect(line_one).to eq(line_two)
+    end
+  end
 end

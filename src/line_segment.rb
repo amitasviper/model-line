@@ -11,5 +11,10 @@ class LineSegment
     @start_point.distance_from(@end_point)
   end
 
+  def ==(that)
+    that.send(:start_point) == @start_point && that.send(:end_point) == @end_point
+  end
 
+  private
+  attr_reader :start_point, :end_point
 end
