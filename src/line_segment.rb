@@ -12,6 +12,7 @@ class LineSegment
   end
 
   def ==(that)
+    return false if that.nil?
     that.send(:start_point) == @start_point && that.send(:end_point) == @end_point
   end
 

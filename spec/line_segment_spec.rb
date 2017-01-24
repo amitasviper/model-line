@@ -21,5 +21,10 @@ describe LineSegment do
       line_two = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
       expect(line_one).to eq(line_two)
     end
+
+    it 'should not be equal to nil' do
+      line = LineSegment.new(Point.new(22, 44), Point.new(55, 66))
+      expect(line).not_to eq(nil)
+    end
   end
 end
